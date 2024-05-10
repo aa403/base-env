@@ -13,7 +13,6 @@ RUN apt install gcc git -y
 
 RUN mkdir -p /home/app
 ENV HOME=/home/app
-RUN mkdir -p /home/app/static
 WORKDIR $HOME/
 
 COPY poetry.lock .
@@ -21,14 +20,16 @@ COPY pyproject.toml .
 
 RUN poetry config virtualenvs.create false
 
-COPY src .
-RUN poetry install --no-dev --no-interaction
-
 
 FROM base as streamlit
 EXPOSE 8501
+#COPY src .  #volume mounted on compose
+RUN poetry install --no-dev --no-interaction
 CMD ["streamlit", "run", "streamlit_app.py"]
 
 FROM base as jupyter
 EXPOSE 8888
+
+RUN poetry install --no-dev --no-interaction
+RUN mkdir -p /home/app/notebooks
 CMD ["jupyter", "lab"]

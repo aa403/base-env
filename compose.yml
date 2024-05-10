@@ -25,11 +25,16 @@ services:
     restart: unless-stopped
     environment:
       JUPYTER_CONFIG_DIR: "/home/app/.jupyterlab"
+      JUPYTERHUB_DIR: "/home/app/notebooks"
       JUPYTER_PORT: 8888
     command: [ "jupyter", "lab", "--ip=*", "--no-browser", "--allow-root" ]
     volumes:
-      - ./src:/home/app
       - ./.jupyterlab:/home/app/.jupyterlab
+      - ./src:/home/app/src/
+      - ./notebooks:/home/app/notebooks/
+      - ./notebooks/.ipynb_checkpoints:/home/app/notebooks/.ipynb_checkpoints
+      - ./notebooks/.ipython:/home/app/notebooks/.ipython
+      - ./notebooks/.local:/home/app/notebooks/.local
     ports:
       - "8888:8888"
     deploy:

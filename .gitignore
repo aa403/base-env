@@ -88,3 +88,9 @@ ansiblekey*
 # Terraform
 *.terraform*
 *terraform.tfstate*
+
+
+.ipython/
+.local/
+.jupyterlab/lab
+.ipynb_checkpoints

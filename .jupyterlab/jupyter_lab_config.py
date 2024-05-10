@@ -1,10 +1,13 @@
 # Configuration file for lab.
-
+import os
 c = get_config()  #noqa
 
 # this exposes to public
+# c.PasswordIdentityProvider.password_required = False
 c.IdentityProvider.token = ""
 c.IdentityProvider.hashed_password = ""
+c.root_dir = os.environ.get('JUPYTERHUB_DIR', '')
+
 
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
