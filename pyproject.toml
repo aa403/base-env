@@ -15,6 +15,18 @@ altair = "*"
 jupyterlab = "*"
 numpy = "*"
 
+[tool.poetry.group.dev.dependencies]
+# "^23.9.1"
+black = "*"
+# "^6.1.0"
+flake8 = "*"
+# "^5.10.1"
+isort = "*"
+# "^0.1.9"
+precisely = "*"
+# "^0.13.11"
+ipdb = "*"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
