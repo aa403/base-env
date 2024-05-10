@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  ex-streamlit:
+    build:
+      context: ./
+      target: streamlit
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    command: [ "streamlit", "run", "streamlit_app.py" ]
+    volumes:
+      - ./src:/home/app
+    ports:
+      - "8501:8501"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+  ex-lab:
+    build:
+      context: ./
+      target: jupyter
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      JUPYTER_CONFIG_DIR: "/home/app/.jupyterlab"
+      JUPYTER_PORT: 8888
+    command: [ "jupyter", "lab", "--ip=*", "--no-browser", "--allow-root" ]
+    volumes:
+      - ./src:/home/app
+      - ./.jupyterlab:/home/app/.jupyterlab
+    ports:
+      - "8888:8888"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
