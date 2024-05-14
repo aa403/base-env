@@ -2,7 +2,7 @@ from unittest import TestCase
 from palindrome_permutation import palindrome_permutation
 
 
-class TestPalindromPermutation(TestCase):
+class TestPalindromePermutation(TestCase):
 
     def test_it(self):
         assert palindrome_permutation("b")
