@@ -12,8 +12,28 @@ streamlit = "*"
 watchdog = "*"
 pandas = "*"
 altair = "*"
-jupyterlab = "*"
+seaborn = "*"
+matplotlib = "*"
+jupyterlab = "~4"
 numpy = "*"
+nltk = "*"
+scipy = "*"
+jupyterlab-sql-editor = "*"
+
+python-lsp-server = "*"
+jupyterlab-lsp = "*"
+jupyterlab-code-formatter = "*"  # https://jupyterlab-code-formatter.readthedocs.io/configuration.html
+#aquirdturtle_collapsible_headings = "*" # jupyterlab 3.0
+#jupyterlab-drawio = "*"  # jupyterlab 3.0
+jupyterlab_latex = "*"
+jupyterlab-git = "*"
+theme-darcula = "*"
+ipysheet = "*"
+#jupyterlab_voyager = "*"  # jupyter labextension install jupyterlab_voyager
+sidecar = "*"
+ipywidgets = "*"
+jupyterlab-widgets = "*"
+
 
 [tool.poetry.group.dev.dependencies]
 # "^23.9.1"
