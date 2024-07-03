@@ -35,9 +35,9 @@ ipywidgets = "*"
 jupyterlab-widgets = "*"
 
 sqlalchemy = "*"
-yfinance = "*"
-cufflinks = "*"
-
+yfinance = "0.2.36"
+# cufflinks = "*"
+cufflinks = { git = "https://github.com/aa403/cufflinks.git", branch = "patch-1" }
 
 
 [tool.poetry.group.dev.dependencies]
