@@ -34,6 +34,11 @@ sidecar = "*"
 ipywidgets = "*"
 jupyterlab-widgets = "*"
 
+sqlalchemy = "*"
+yfinance = "*"
+cufflinks = "*"
+
+
 
 [tool.poetry.group.dev.dependencies]
 # "^23.9.1"

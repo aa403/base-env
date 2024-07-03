@@ -94,3 +94,4 @@ ansiblekey*
 .local/
 .jupyterlab/lab
 .ipynb_checkpoints
+.virtual_documents
